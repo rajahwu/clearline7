@@ -3,15 +3,34 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "build": "pnpm -r run build",
-      "dev": "pnpm -r --parallel --stream run dev",
-      "dev:client": "pnpm --filter client run dev",
-      "dev:style-system": "pnpm --filter style-system run dev"
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r --parallel --stream run dev",
+    "dev:client": "pnpm --filter client run dev",
+    "dev:style-system": "pnpm --filter style-system run dev",
+    "typecheck": "tsc -b --noEmit",
+    "lint:apps": "eslint apps --ext .ts,.tsx",
+    "lint:packages": "eslint packages --ext .ts,.tsx",
+    "lint:api": "eslint api --ext .ts,.tsx",
+    "lint": "pnpm run lint:apps && pnpm run lint:packages && pnpm run lint:api"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.18.3"
+  "packageManager": "pnpm@10.18.3",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^24.8.1",
+    "@typescript-eslint/eslint-plugin": "^8.46.1",
+    "@typescript-eslint/parser": "^8.46.1",
+    "eslint": "^9.38.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.4.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1",
+    "vite": "^7.1.10"
+  }
 }

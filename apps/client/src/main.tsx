@@ -1,13 +1,10 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import ReactDOM from 'react-dom/client'
+import App from './App'
 import './index.css'
-import App from './App.tsx'
-import { hello } from "style-system";
+import { BrowserRouter } from 'react-router-dom';
 
-console.log(hello());
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <BrowserRouter>
     <App />
-  </StrictMode>,
+  </BrowserRouter>
 )
